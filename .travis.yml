@@ -1,15 +1,20 @@
 env:
-  secure: abC8IdMupbbNVZH0F3k1Zg7y4Fb6dsgatKxzzO0gTivfFrbV90hFtgHzejzNNx5242DSeXguhsjpmbsCLxduQOi/IfG2hQO/Ze4VWxqqSrb2sQ3BQYFmTYUUKHCdQqr4EV49oQYL5SqKpsG7bBMOFTYxdctzf44xGzEL8TqSbm0g6K+2IRhZVUt2lOZTGmrRFMMXZHxR9LXgFF4I61Ln2qQ1Fp8agjSfYcHI+bPLfuiWe6uV/fDYMGhHsmkhb+J7nsFgKQReGRkCtwFjXoILwowTkCUr9UfqHpEYWX6YzIX+WGreNlQ/qfxCOHYBPlV7kjMMutvlYt2vUUp14aLTJe+g/bfpWTZPGbITUm1yZhygqspg9gJ21Y0SKUCVDqQbj0M4gonpW2S1uRd+so4a0v2zyEpdfUUZo+7hqBvOwCwYlylOfH8lGitm0f8i/FZZw6iLPrEcmUz+pDgQBeZlog7KdzSAKssbkTsu5TBN14QkzFZ7LBfCIzky9XkXYCGq/9y1w+3ijevQaGQCZKJaGCEGW/ED6AzH73hq9T64rmgUOV+6qEjLXZMsjVussa0DOM9Q2/UYBZS1CvjGrG0Bcd0JfZ729fZXw7ilghVkH0qRUHXRhtnDliiw/kXxpL2E8g5sxwsK5f7eJfYflgsk0w3O60XlaB7DB8wIrt9wgYE=
+  secure: ''
 language: ruby
 dist: focal
 rvm:
 - 2.6.5
+cache:
+  directories:
+  - node_modules
+  - vendor/bundle
+env:
+- BUNDLE_PATH=vendor/bundle
 before_install:
+- gem install bundler:2.1.4
 - nvm install 12.13.1
-before_script:
 - npm install -g yarn@1.22.4
-- bundle config set without production
-- bundle config set path vendor/bundle
+before_script:
 - bundle install
 - yarn install
 script:
