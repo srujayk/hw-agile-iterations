@@ -8,8 +8,6 @@ cache:
   directories:
   - node_modules
   - vendor/bundle
-env:
-- BUNDLE_PATH=vendor/bundle
 before_install:
 - gem install bundler:2.1.4
 - nvm install 12.13.1
